@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Resizer</title>
+    <link rel="stylesheet" href="inc/app.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Icon Resizer</h1>
+        
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">Click to upload an icon or drag & drop</div>
+                <div class="upload-subtext">Supports PNG, JPG, JPEG, SVG, ICO, WEBP</div>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" />
+        </div>
+
+        <div class="controls-section" id="controlsSection" style="display: none;">
+            <div class="controls-grid">
+                <div class="control-group">
+                    <h3>📱 Platform Presets</h3>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-preset="ios">iOS App</button>
+                        <button class="preset-btn" data-preset="android">Android</button>
+                        <button class="preset-btn" data-preset="web">Web</button>
+                        <button class="preset-btn" data-preset="windows">Windows</button>
+                        <button class="preset-btn" data-preset="macos">macOS</button>
+                        <button class="preset-btn" data-preset="favicon">Favicon</button>
+                        <button class="preset-btn" data-preset="pwa">PWA</button>
+                        <button class="preset-btn" data-preset="social">Social Media</button>
+                        <button class="preset-btn" data-preset="watchos">Apple Watch</button>
+                        <button class="preset-btn" data-preset="tvos">Apple TV</button>
+                        <button class="preset-btn active" data-preset="default">Default</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>📏 Custom Sizes</h3>
+                    <div class="custom-sizes">
+                        <input type="number" class="size-input" id="customSizeInput" placeholder="Size" min="8" max="2048">
+                        <button class="add-size-btn" id="addSizeBtn">+ Add</button>
+                    </div>
+                    <div class="size-tags" id="sizeTags"></div>
+                </div>
+
+                <div class="control-group">
+                    <h3>🎨 Output Formats</h3>
+                    <div class="format-options">
+                        <label class="format-option">
+                            <input type="checkbox" value="png" checked> PNG
+                        </label>
+                        <label class="format-option">
+                            <input type="checkbox" value="webp"> WebP
+                        </label>
+                        <label class="format-option">
+                            <input type="checkbox" value="jpg"> JPG
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="generate-btn" id="generateBtn">🚀 Generate Icons</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <div>Processing your icon...</div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="original-preview" id="originalPreview"></div>
+            
+            <button class="btn download-all-btn" id="downloadAllBtn">
+                📦 Download All as ZIP
+            </button>
+            
+            <div class="icons-grid" id="iconsGrid"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="inc/app.js"></script>
+</body>
+</html>
